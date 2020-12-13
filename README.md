@@ -2,7 +2,7 @@
 ## PJ103
 <img src="images/PJ103-front.jpg" style="display: inline-block;" width="400"><img src="images/PJ103-back.jpg" style="display: inline-block;" width="400">
 
-The PJ103 module is a 14.2x13.4mm open-source, stand-alone, programmable relay module based on ATtiny85 with [PJON](https://github.com/gioblu/PJON/) over [PJDL](https://github.com/gioblu/PJON/blob/master/src/strategies/SoftwareBitBang/specification) networking. It needs only 3 pins (PJDL, 5v, GND) to operate transmitting samples and receiving incoming configuration on the same PJON IO pin.
+The PJ103 module is a 46x30mm open-source, stand-alone, programmable relay module based on ATtiny85 with [PJON](https://github.com/gioblu/PJON/) over [PJDL](https://github.com/gioblu/PJON/blob/master/src/strategies/SoftwareBitBang/specification) networking. It needs only 3 pins (PJDL, 5v, GND) to operate transmitting samples and receiving incoming configuration on the same PJON IO pin.
 
 ```cpp  
  _______   _______   _______
