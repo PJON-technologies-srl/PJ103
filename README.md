@@ -15,7 +15,7 @@ ______|_________|_________|______ GND
 ```
 Multiple PJ103s can be connected in parallel on the same [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus sharing the same power, ground and data connection. Each PJ103 is running an instance of the PJON protocol stack with its own configurable device id, so many can coexist on the same medium.
 
-PJ103 has been engineered with the strong feeling that, in the future, "smart houses" will not necessarily host a multitude of inefficient embedded real-time operative systems in whatever "thing" while exposing vulnerabilities out of the physical boundaries of houses. Otherwise, more probably, will host many simple, less power-hungry microcontrollers, connected to a wired communication bus.
+PJ102 has been engineered with the strong feeling that in the future "smart homes" will not necessarily host a multitude of inefficient embedded real-time operative systems in whatever "thing" while exposing vulnerabilities out of the physical boundaries of houses. Otherwise, more probably, they will host many simple less power-hungry microcontrollers connected to a wired communication bus.
 
 ### Software
 A basic example program is proposed to let users easily configure the PJ103s using only a series of commands on its PJON [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus to avoid flashing the chip multiple times. With the [Console](software/Console/Console.ino) example and an Arduino compatible device it is possible to input configuration and request samples with an easy to use console interface. PJ103 accepts incoming requests if sent by `PJON_MASTER_ID` and its configured recipient id.
