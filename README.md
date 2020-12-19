@@ -2,7 +2,7 @@
 ## PJ103
 <img src="images/PJ103-front.jpg" style="display: inline-block;" width="400"><img src="images/PJ103-back.jpg" style="display: inline-block;" width="400">
 
-The PJ103 module is a 46x30mm open-source, stand-alone, programmable relay module based on ATtiny85 with [PJON](https://github.com/gioblu/PJON/) over [PJDL](https://github.com/gioblu/PJON/blob/master/src/strategies/SoftwareBitBang/specification) networking. It needs only 3 pins (PJDL, 5v, GND) to operate transmitting samples and receiving incoming configuration on the same PJON IO pin. PJ103 consumes around 0.159w with the relay off and 0.837w with the relay on when powered with 9v.
+[PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) is a 46x30mm open-source, stand-alone, programmable relay module based on ATtiny85 with [PJON](https://github.com/gioblu/PJON/) over [PJDL](https://github.com/gioblu/PJON/blob/master/src/strategies/SoftwareBitBang/specification) networking. It needs only 3 pins (PJDL, 5v, GND) to operate transmitting samples and receiving incoming configuration on the same PJON IO pin. PJ103 consumes around 0.159w with the relay off and 0.837w with the relay on when powered with 9v.
 
 ```cpp  
  _______   _______   _______
@@ -13,9 +13,9 @@ ____|||_______|||_______|||______ SoftwareBitBang bus
 _____||________||________||______ +9v
 ______|_________|_________|______ GND
 ```
-Multiple PJ103s can be connected in parallel on the same [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus sharing the same power, ground and data connection. Each PJ103 is running an instance of the PJON protocol stack with its own configurable device id, so many can coexist on the same medium.
+Multiple PJ103s can be connected in parallel on the same [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus sharing the same power, ground and data connection. Each [PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) is running an instance of the PJON protocol stack with its own configurable device id, so many can coexist on the same medium.
 
-PJ103 has been engineered with the strong feeling that in the future "smart homes" will not necessarily host an embedded real-time operative system in whatever "thing" and expose vulnerabilities out of their physical boundaries. Otherwise, more probably, they will host many less power-hungry microcontrollers connected to a wired communication bus.
+[PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) has been engineered with the strong feeling that in the future "smart homes" will not necessarily host an embedded real-time operative system in whatever "thing" and expose vulnerabilities out of their physical boundaries. Otherwise, more probably, they will host many less power-hungry microcontrollers connected to a wired communication bus.
 
 ### Software
 A basic example program is proposed to let users easily configure the PJ103s using only a series of commands on its PJON [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus to avoid flashing the chip multiple times. With the [Console](software/Console/Console.ino) example and an Arduino compatible device it is possible to input configuration and request samples with an easy to use console interface. PJ103 accepts incoming requests if sent by `PJON_MASTER_ID` and its configured recipient id.
@@ -57,9 +57,18 @@ attiny.menu.clock.external16BOD.build.f_cpu=16000000L
 - Select Tools->Burn bootloader
 - Open PJ103.ino
 - Upload the program
+- Insert the ATtiny85 in the socket 
 
-The chip should be good to go.
+[PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) should be ready for use
 
+### How to configure it
+With the [Console](software/Console/Console.ino) example and an Arduino compatible device it is possible to input configuration and request samples with an easy to use console interface:
+
+- Program an Arduino with `Console.ino`
+- Connect the [PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) with the arduino 
+- Open the serial monitor
+
+You should now be able to communicate with [PJ102](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-102) using the commands described in the software section.
 ### Schematic
 The circuit is quite simple and can be tested quickly on a breadboard. It is composed by few components such as the MCU, its clock, the voltage regulator, a couple of resistors, capacitors and obviously the relay.
 
