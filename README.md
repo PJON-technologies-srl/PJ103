@@ -35,6 +35,31 @@ A basic example program is proposed to let users easily configure the PJ103s usi
 
 The ATtiny85 must to be flashed with the [PJ103](software/PJ103/PJ103.ino) sketch using an ISP programmer, see [ATtiny85 interfacing](https://github.com/gioblu/PJON/wiki/ATtiny-interfacing)
 
+### How to install the software
+The software is relatively easy to install:
+- Follow [High-Low Tech tutorial](http://highlowtech.org/?p=1695) by David Mellis and install the required software.  
+- Locate the Arduino IDE `boards.txt` file (in Windows is in `C:\Users\your-user-name\AppData\Local\Arduino15\packages\attiny\hardware\avr\1.0.1`)
+- Add the code below at the end of the file and save it
+```
+attiny.menu.clock.external16BOD=PJON PJ100 modules
+attiny.menu.clock.external16BOD.bootloader.low_fuses=0xfe
+attiny.menu.clock.external16BOD.bootloader.high_fuses=0xdc
+attiny.menu.clock.external16BOD.bootloader.extended_fuses=0xff
+attiny.menu.clock.external16BOD.build.f_cpu=16000000L
+```
+- Open the Arduino IDE
+- Program an Arduino with the ArduinoISP example
+- Connect the Arduino to the ATtiny85 as described in the [High-Low Tech tutorial](http://highlowtech.org/?p=1695)
+- Connect a 16MHz oscillator to the ATtiny85 to program it successfully
+- Select Tools->Board->ATtiny
+- Select Tools->Processor->ATtiny85
+- Select Tools->Clock->PJON PJ100 modules
+- Select Tools->Burn bootloader
+- Open PJ103.ino
+- Upload the program
+
+The chip should be good to go.
+
 ### Schematic
 The circuit is quite simple and can be tested quickly on a breadboard. It is composed by few components such as the MCU, its clock, the voltage regulator, a couple of resistors, capacitors and obviously the relay.
 
