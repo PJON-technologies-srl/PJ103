@@ -18,7 +18,7 @@ Multiple PJ103s can be connected in parallel on the same [SoftwareBitBang](https
 [PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) has been engineered with the strong feeling that in the future "smart homes" will not necessarily host an embedded real-time operative system in whatever "thing" and expose vulnerabilities out of their physical boundaries. Otherwise, more probably, they will host many less power-hungry microcontrollers connected to a wired communication bus.
 
 ### Software
-A basic example program is proposed to let users easily configure the PJ103s using only a series of commands on its PJON [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus to avoid flashing the chip multiple times. With the [Console](software/Console/Console.ino) example and an Arduino compatible device it is possible to input configuration and request samples with an easy to use console interface. PJ103 accepts incoming requests if sent by `PJON_MASTER_ID` and its configured recipient id.
+A basic example program is proposed to let users easily configure the PJ103s using only a series of commands on its PJON [SoftwareBitBang](https://github.com/gioblu/PJON/tree/master/src/strategies/SoftwareBitBang) bus to avoid flashing the chip multiple times. PJ103 accepts incoming requests if sent by `PJON_MASTER_ID` and its configured recipient id.
 
 | Command                          | Parameter     | Effect                                                            |
 | -------------------------------- | --------------| ----------------------------------------------------------------- |
@@ -32,8 +32,6 @@ A basic example program is proposed to let users easily configure the PJ103s usi
 |  `X` Configuration reset         | none          | Sets configuration to default                                     |
 
 - `Q` For security reasons it is possible to block incoming configuration, although further configuration is possible flashing the [PJ103](software/PJ103/PJ103.ino) sketch on the ATtiny85 using an ISP programmer.
-
-The ATtiny85 must to be flashed with the [PJ103](software/PJ103/PJ103.ino) sketch using an ISP programmer, see [ATtiny85 interfacing](https://github.com/gioblu/PJON/wiki/ATtiny-interfacing)
 
 ### How to upload the software
 The software is relatively easy to install:
