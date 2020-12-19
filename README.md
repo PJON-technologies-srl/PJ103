@@ -55,7 +55,7 @@ attiny.menu.clock.external16BOD.build.f_cpu=16000000L
 - Select Tools->Processor->ATtiny85
 - Select Tools->Clock->PJON PJ100 modules
 - Select Tools->Burn bootloader
-- Open PJ103.ino
+- Open `PJ103.ino`
 - Upload the program
 - Insert the ATtiny85 in the socket 
 
@@ -69,6 +69,7 @@ With the [Console](software/Console/Console.ino) example and an Arduino compatib
 - Open the serial monitor
 
 You should now be able to communicate with [PJ103](https://www.pjon-technologies.com/collections/pj100-hardware/products/pjon-sensor-103) using the commands described in the software section.
+
 ### Schematic
 The circuit is quite simple and can be tested quickly on a breadboard. It is composed by few components such as the MCU, its clock, the voltage regulator, a couple of resistors, capacitors and obviously the relay.
 
